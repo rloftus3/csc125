@@ -23,7 +23,7 @@ int main()
   robot.debug();
 
   /// the output ('name' is in the html form that started this)
-  cout  << "On Saturday, stakes were high, circuits "
+  cout  << " <p> On Saturday, stakes were high, circuits "
   << robot.getField("gerund")
   << ", with a rather “electric” excitement in the air. The Siebel Center at the University of Illinois hosted various Midwest colleges for the second annual "
   << robot.getField("c_word")
@@ -33,8 +33,8 @@ int main()
   << robot.getField("location")
   << ", and with a trip to the world competition on the line, their bots were put to the test. "
   << "\"A college will build two robots, and another college will build two robots, and they'll basically battle in an objective-based game,\" Event Manager Husain Badri said."
-  << endl << "<br/>"
-  << "The game this year was to have the bots push "
+  << endl << "</p>"
+  << "<p> The game this year was to have the bots push "
   << robot.getField("smallObject")
   << "-shaped balls into a "
   << robot.getField("largeObject")
@@ -52,8 +52,8 @@ int main()
   << " that you have to deal with and you feel that you have to be familiar with,\", Kaluna said. "
   << "\"So, unlike Battlebots where you kind of build the same type of robot every year, you have to kind of think new every single year designing a completely new robot."
   << " And so I think that brings up a lot of ingenuity in the design process with these robots.\""
-  << endl << "<br/>"
-  << "The President of Illini Vex Robotics, Anes Kim, agrees. \"It's really interesting how teams all come up with different designs every year."
+  << endl << "<p/>"
+  << "<p>The President of Illini Vex Robotics, Anes Kim, agrees. \"It's really interesting how teams all come up with different designs every year."
   << " Like the task itself remains the same, but everyone comes up with different ideas. So I always love seeing that, in the eight years I've been in robotics.\""
   << " The winner of the challenge will receive the "
   << robot.getField("adjective")
@@ -65,7 +65,7 @@ int main()
   << robot.getField("c_word")
   << " Clash — this time with "
   << robot.getField("number2")
-  << " high school teams.";
+  << " high school teams. </p>";
  
   return 0;
 }
