@@ -1,0 +1,12 @@
+It was compiled using the command:
+
+g++ *cpp -o runme.cgi
+
+You start with montyPythonForm.html and enter the information
+
+You can copy all these files to your diectory with the command
+
+cp ~kurban/public_html/permanent/cpp-examples/htmlForm/* .
+
+
+
