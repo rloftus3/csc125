@@ -61,5 +61,11 @@ void SVGrectangle::set_b(string B) {
 }
 
 void SVGrectangle::printHTML() {
-    cout << "hi from printhtml";
+    string rgb = "rgb(" + r + "," + g +"," + b +")";
+    cout << "<rect x=\"" << x << "\"";
+    cout << " y=\"" << y << "\"";
+    cout << " width=\"" << w << "\"";
+    cout << " height=\"" << h << "\"";
+    cout << " style=\"fill:" << rgb << ";stroke-width:3;stroke:" << rgb << "\"/>";
+
 }
