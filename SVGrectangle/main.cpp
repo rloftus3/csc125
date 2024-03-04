@@ -8,7 +8,7 @@ int main()
 {
    cout << "Content-type: text/html" << endl << endl;
    
-   SVGrectangle redtangle("350", "200", "300", "100", "255", "0", "0");
+   SVGrectangle redtangle("500", "150", "300", "100", "255", "0", "0");
    SVGrectangle greentangle("0", "300", "300", "100", "0", "255", "0");
    SVGrectangle bluetangle("310", "300", "300", "100", "0", "0", "255");
 
