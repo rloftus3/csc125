@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include "SVGrectangle.h"
 
 using namespace std;
