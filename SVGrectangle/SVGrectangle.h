@@ -6,6 +6,8 @@ using namespace std;
 
 class SVGrectangle {
     public:
+        SVGrectangle(string X, string Y, string W, string H, string R, string G, string B);
+
         //accessors
         string get_x();
         string get_y();
@@ -16,13 +18,13 @@ class SVGrectangle {
         string get_b();
 
         //mutators
-        string set_x();
-        string set_y();
-        string set_w();
-        string set_h();
-        string set_r();
-        string set_g();
-        string set_b();
+        void set_x(string X);
+        void set_y(string Y);
+        void set_w(string W);
+        void set_h(string H);
+        void set_r(string R);
+        void set_g(string G);
+        void set_b(string B);
 
         void printHTML();
     private:
