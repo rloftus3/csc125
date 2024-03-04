@@ -11,7 +11,10 @@ runme.cgi: main.cpp htmlform.cpp
 	$(CXX) *.cpp -o $@
 
 publish:
-	echo "Hi from Publish"
+	if test -d ~/public_html; then \
+	  mkdir -p ~/public_html/madlib; \
+		cp -f --remove-destination *.html *.cgi ~/public_html/madlib; \
+	fi
 
 clean:
 	rm *.cgi
