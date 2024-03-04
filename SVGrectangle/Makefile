@@ -7,7 +7,7 @@ CXX = g++
 # Default target
 all: runme.cgi publish
 
-runme.cgi: main.cpp htmlform.cpp
+runme.cgi: main.cpp SVGrectangle.cpp
 	$(CXX) *.cpp -o $@
 
 publish:
