@@ -3,14 +3,15 @@
 
 using namespace std;
 
-//variables
-string x;
-string y;
-string w;
-string h;
-string r;
-string g;
-string b;
+SVGrectangle(string X, string Y, string W, string H, string R, string G, string B) {
+    x = X;
+    y = Y;
+    w = W;
+    h = H;
+    r = R;
+    g = G;
+    b = B;
+}
 
 //accessors
 string get_x() {
@@ -36,26 +37,28 @@ string get_b() {
 }
 
 //mutators
-string set_x(int X) {
+string set_x(string X) {
     x = X;
 }
-string set_y(int Y) {
+string set_y(string Y) {
     y = Y;
 }
-string set_w(int W) {
+string set_w(string W) {
     w = W
 }
-string set_h(int H) {
+string set_h(string H) {
     h = H;
 }
-string set_r(int R) {
+string set_r(string R) {
     r = R;
 }
-string set_g(int G) {
+string set_g(string G) {
     g = G;
 }
-string set_b(int B) {
+string set_b(string B) {
     b = B;
 }
 
-void printHTML();
+void printHTML() {
+    cout << "hi from printhtml";
+}
