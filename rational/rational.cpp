@@ -11,19 +11,22 @@ ostream& operator<<(ostream &out, Rational r) {
 /// default constructor
 Rational::Rational()
 {
-
+  m_Numerator = 0;
+  m_Denominator = 1;
 }
 
 /// constructor for integers
 Rational::Rational(int numerator)
 {
-
+  m_Denominator = 1;
+  m_Numerator = numerator;
 }
 
 /// constructor for two integers
 Rational::Rational(int numerator, int denominator)
 {
-
+  m_Numerator = numerator;
+  m_Denominator = denominator;
 }
 
 /// multiple two numbers (given)
