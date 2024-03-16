@@ -30,7 +30,7 @@ Rational::Rational(int numerator, int denominator)
   reduce();
 }
 
-/// multiple two numbers (given)
+/// multiply two numbers (given)
 Rational operator*(Rational leftOp, Rational rightOp) {
   /*
     a      c        a * c
@@ -61,7 +61,12 @@ Rational operator+(Rational leftOp, Rational rightOp) {
 
    */
 
-  Rational returnValue;
+  int a = leftOp.getNumerator();
+  int b = leftOp.getDenominator();
+  int c = rightOp.getNumerator();
+  int d = rightOp.getDenominator();
+
+  Rational returnValue( (a * d) + (b * c), b * d );
   return returnValue;
 }
 
@@ -74,7 +79,12 @@ Rational operator-(Rational leftOp, Rational rightOp) {
 
    */
 
-  Rational returnValue;
+  int a = leftOp.getNumerator();
+  int b = leftOp.getDenominator();
+  int c = rightOp.getNumerator();
+  int d = rightOp.getDenominator();
+
+  Rational returnValue( (a * d) - (b * c), b * d );
   return returnValue;
 }
 
@@ -87,7 +97,12 @@ Rational operator/(Rational leftOp, Rational rightOp) {
 
    */
 
-  Rational returnValue;
+  int a = leftOp.getNumerator();
+  int b = leftOp.getDenominator();
+  int c = rightOp.getNumerator();
+  int d = rightOp.getDenominator();
+
+  Rational returnValue(a * d, b * c);
   return returnValue;
 }
 
