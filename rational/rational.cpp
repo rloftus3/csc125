@@ -142,7 +142,7 @@ bool operator<=(Rational leftOp, Rational rightOp) {
 
 bool operator>(Rational leftOp, Rational rightOp) {
 
-  return false;
+  return !(rightOp <= leftOp);
 }
 
 bool operator>=(Rational leftOp, Rational rightOp) {
