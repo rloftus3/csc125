@@ -1,0 +1,21 @@
+To copy these file to the current directory, use:
+
+cp ~kurban/public_html/permanent/sample-files/rationalLab/* .
+
+To compile whats here, type:
+
+g++ main.o htmlform.o rational.cpp -o runme.cgi
+
+and access 
+
+runme.cgi
+
+over the web
+
+or you can do
+
+g++ *cpp *o -o runme.cgi
+
+NOTE that the .o file will only work on linux. 
+
+This is a cgi script, designed to run over the web.
