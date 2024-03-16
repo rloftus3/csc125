@@ -113,10 +113,29 @@ bool operator<(Rational leftOp, Rational rightOp) {
     b      d        
 
    */
+
+  int a = leftOp.getNumerator();
+  int b = leftOp.getDenominator();
+  int c = rightOp.getNumerator();
+  int d = rightOp.getDenominator();
+
+  if ((a * d) < (b * c)) {
+    return true;
+  }
+
   return false;
 }
 
 bool operator<=(Rational leftOp, Rational rightOp) {
+
+  int a = leftOp.getNumerator();
+  int b = leftOp.getDenominator();
+  int c = rightOp.getNumerator();
+  int d = rightOp.getDenominator();
+
+  if ((a * d) <= (b * c)) {
+    return true;
+  }
 
   return false;
 }
