@@ -27,6 +27,7 @@ Rational::Rational(int numerator, int denominator)
 {
   m_Numerator = numerator;
   m_Denominator = denominator;
+  reduce();
 }
 
 /// multiple two numbers (given)
