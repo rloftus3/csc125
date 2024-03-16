@@ -147,17 +147,26 @@ bool operator>(Rational leftOp, Rational rightOp) {
 
 bool operator>=(Rational leftOp, Rational rightOp) {
 
-  return false;
+  return !(leftOp < rightOp);
 }
 
 bool operator==(Rational leftOp, Rational rightOp) {
+
+  int a = leftOp.getNumerator();
+  int b = leftOp.getDenominator();
+  int c = rightOp.getNumerator();
+  int d = rightOp.getDenominator();
+
+  if ((a * d) == (b * c)) {
+    return true;
+  }
 
   return false;
 }
 
 bool operator!=(Rational leftOp, Rational rightOp) {
 
-  return false;
+  return !(leftOp == rightOp);
 }
 
 
