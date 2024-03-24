@@ -12,14 +12,16 @@ using namespace std;
     return rv;
   }
   bool isClose(char c) {
-    if (o == ')' || o == '}' || o == ']') {
+    bool rv = false;
+    if (c == ')' || c == '}' || c == ']') {
       rv = true;
     }
     return rv;
   }
-  bool isMatch() {
+  /*bool isMatch() {
+    bool rv = false;
     if (o )
-  }
+  }*/
 
 int main() {
 
