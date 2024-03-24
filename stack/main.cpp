@@ -77,14 +77,7 @@ int main() {
     cout << "ItSA ME PEACH,,,, CAKE!<br/>";
   }
   else {
-    cout << "<pre>
-                                                         c=====e
-                                                            H
-   ____________                                         _,,_H__
-  (__((__((___()                                       //|     |
- (__((__((___()()_____________________________________// |ACME |
-(__((__((___()()()------------------------------------'  |_____|
-<pre/>CHECK YOUR WATCHES, BOWSER TIME!!!<br/>";
+    cout << "CHECK YOUR WATCHES, BOWSER TIME!!!<br/>";
   }
   return 0;
 }
