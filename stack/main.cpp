@@ -11,6 +11,20 @@ int main() {
   string inputText;
   HTMLform textarea;
 
+  bool isOpen(char o) {
+    bool rv = false;
+    if o == '(' || '{' || '[' {
+      rv = true
+    }
+    return rv;
+  }
+  /*bool isClose(char c) {
+
+  }
+  bool isMatch() {
+
+  }*/
+
   /// complete the http header
   cout << "Content-type: text/html\n\n";
 
