@@ -25,8 +25,6 @@ int main() {
   string inputText;
   HTMLform textarea;
 
-
-
   /// complete the http header
   cout << "Content-type: text/html\n\n";
 
@@ -41,7 +39,12 @@ int main() {
   inputText = textarea.getField("text");
   //cout << inputText;
   for(int i = 0; i <= inputText.length(); i++) {
-    cout << inputText[i] << endl;
+    //cout << inputText[i] << endl;
+    char ch = inputText[i];
+    if (isOpen(ch)) {
+      s.push(ch);
+      cout << ch << " is open.<br/>";
+    }
   }
 
   return 0;
