@@ -18,9 +18,11 @@ using namespace std;
     }
     return rv;
   }
-  bool isMatch(string o, string c) {
+  bool isMatch(char o, char c) {
     bool rv = false;
-    string pair = o + c;
+    string pair;
+    pair += o;
+    pair += c;
     if (pair == "()" || pair == "{}" || pair == "[]") {
       rv = true;
     }
@@ -51,14 +53,21 @@ int main() {
     //cout << inputText[i] << endl;
     char ch = inputText[i];
     if (isOpen(ch)) {
-      //s.push(ch);
-      cout << ch << " is open.<br/>";
+      s.push(ch);
+      //cout << ch << " is open.<br/>";
     }
     else if (isClose(ch)) {
-      cout << ch << " is closed.<br/>";
+      //cout << ch << " is closed.<br/>";
+      char prev = s.top();
+      if(isMatch(prev, ch)) {
+        cout << "MATCH!!!!! " << prev << ch << "<br/>";
+        s.pop();
+      }
+      else {
+        break;
+        cout << "ItSA ME MARIO,,, FUCKA YOU :( " << prev << ch << "<br/>";
+      }
     }
-
   }
-
   return 0;
 }
