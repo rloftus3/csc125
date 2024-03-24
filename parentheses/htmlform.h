@@ -15,8 +15,9 @@ class HTMLform
    void getPostData();
    string getField(string);
  private:
+   int hexToDec(string);
    void processPair(string);
-   string urlDecode(string&);
+   void urlDecode(string&);
    string m_PostData;
 
    vector<NameValuePair> m_Pairs;
