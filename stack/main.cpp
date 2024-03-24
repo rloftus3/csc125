@@ -18,7 +18,7 @@ using namespace std;
     }
     return rv;
   }
-  bool isMatch(char o, char c) {
+  bool isMatch(string o, string c) {
     bool rv = false;
     string pair = o + c;
     if (pair == "()" || pair == "{}" || pair == "[]") {
