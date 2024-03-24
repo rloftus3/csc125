@@ -64,8 +64,8 @@ int main() {
         s.pop();
       }
       else {
-        break;
         cout << "ItSA ME MARIO,,, FUCKA YOU :( " << prev << ch << "<br/>";
+        break;
       }
     }
   }
