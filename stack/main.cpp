@@ -38,7 +38,7 @@ int main() {
   /// the output ('name' is in the html form that started this)
   inputText = textarea.getField("text");
   //cout << inputText;
-  for(int i = 0; i <= inputText.length(); i++) {
+  for(int i = 0; i < inputText.length(); i++) {
     //cout << inputText[i] << endl;
     char ch = inputText[i];
     if (isOpen(ch)) {
