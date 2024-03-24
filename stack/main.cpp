@@ -18,10 +18,14 @@ using namespace std;
     }
     return rv;
   }
-  /*bool isMatch() {
+  bool isMatch(char o, char c) {
     bool rv = false;
-    if (o )
-  }*/
+    string pair = o + c;
+    if (pair == "()" || pair == "{}" || pair == "[]") {
+      rv = true;
+    }
+    return rv;
+  }
 
 int main() {
 
