@@ -7,13 +7,13 @@ CXX = g++
 # Default target
 all: runme.cgi publish
 
-runme.cgi: main.cpp 
+runme.cgi: htmlform.cpp htmlform.h main.cpp namevaluepair.h
 	$(CXX) *.cpp -o $@
 
 publish:
 	if test -d ~/public_html; then \
-	  mkdir -p ~/public_html/parantheses; \
-		cp -f --remove-destination *.html *.cgi ~/public_html/parantheses; \
+	  mkdir -p ~/public_html/stack; \
+		cp -f --remove-destination *.html *.cgi ~/public_html/stack; \
 	fi
 
 clean:

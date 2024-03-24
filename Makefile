@@ -1,4 +1,4 @@
-SUBDIRS = madlib SVGrectangle
+SUBDIRS = madlib SVGrectangle stack
 
 all: $(SUBDIRS)
 

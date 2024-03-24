@@ -13,7 +13,7 @@ runme.cgi: main.cpp SVGrectangle.cpp
 publish:
 	if test -d ~/public_html; then \
 	  mkdir -p ~/public_html/SVGrectangle; \
-		cp -f --remove-destination *.html *.cgi ~/public_html/SVGrectangle; \
+		cp -f --remove-destination *.cgi ~/public_html/SVGrectangle; \
 	fi
 
 clean:
