@@ -11,12 +11,15 @@ using namespace std;
     }
     return rv;
   }
-  /*bool isClose(char c) {
-
+  bool isClose(char c) {
+    if (o == ')' || o == '}' || o == ']') {
+      rv = true;
+    }
+    return rv;
   }
   bool isMatch() {
-
-  }*/
+    if (o )
+  }
 
 int main() {
 
@@ -42,9 +45,13 @@ int main() {
     //cout << inputText[i] << endl;
     char ch = inputText[i];
     if (isOpen(ch)) {
-      s.push(ch);
+      //s.push(ch);
       cout << ch << " is open.<br/>";
     }
+    else if (isClose(ch)) {
+      cout << ch << " is closed.<br/>";
+    }
+
   }
 
   return 0;
