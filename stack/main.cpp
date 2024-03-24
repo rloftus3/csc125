@@ -6,7 +6,8 @@ using namespace std;
 
   bool isOpen(char o) {
     bool rv = false;
-    if (o == '(' || '{' || '[') {
+    //if (o == '(' || '{' || '[') {
+    if (o == '(') {
       rv = true;
     }
     return rv;
