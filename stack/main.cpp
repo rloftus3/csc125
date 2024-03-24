@@ -25,7 +25,7 @@ int main() {
   inputText = textarea.getField("text");
   //cout << inputText;
   for(int i = 0; i <= inputText.length(); i++) {
-    cout << inputText[i];
+    cout << inputText[i] << endl;
   }
 
   return 0;
