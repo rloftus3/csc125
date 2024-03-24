@@ -59,6 +59,10 @@ int main() {
     else if (isClose(ch)) {
       //cout << ch << " is closed.<br/>";
       char prev = s.top();
+      if(s.empty()) {
+        cout << "ItSA ME LUIGI,,, FUCKA YOU :D<br/>";
+        break;
+      }
       if(isMatch(prev, ch)) {
         cout << "MATCH!!!!! " << prev << ch << "<br/>";
         s.pop();
@@ -68,6 +72,9 @@ int main() {
         break;
       }
     }
+  }
+  if(s.empty()) {
+    cout << "ItSA ME PEACH,,,, CAKE!<br/>";
   }
   return 0;
 }
