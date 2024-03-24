@@ -4,17 +4,10 @@
 
 using namespace std;
 
-int main() {
-
-  stack<char> s;
-
-  string inputText;
-  HTMLform textarea;
-
   bool isOpen(char o) {
     bool rv = false;
-    if o == '(' || '{' || '[' {
-      rv = true
+    if (o == '(' || '{' || '[') {
+      rv = true;
     }
     return rv;
   }
@@ -24,6 +17,15 @@ int main() {
   bool isMatch() {
 
   }*/
+
+int main() {
+
+  stack<char> s;
+
+  string inputText;
+  HTMLform textarea;
+
+
 
   /// complete the http header
   cout << "Content-type: text/html\n\n";
