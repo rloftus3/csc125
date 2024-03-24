@@ -23,7 +23,12 @@ int main() {
 
   /// the output ('name' is in the html form that started this)
   inputText = textarea.getField("text");
-  cout << inputText;
+  //cout << inputText;
+  int i = -1;
+  while(i < inputText::npos) {
+    i++;
+    cout << inputText[i];
+  }
 
   return 0;
 }
