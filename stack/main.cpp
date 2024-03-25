@@ -60,24 +60,24 @@ int main() {
       //cout << ch << " is closed.<br/>";
       char prev = s.top();
       if(s.empty()) {
-        cout << "ItSA ME LUIGI,,, FUCKA YOU :D<br/>";
+        cout << "<br/>";
         break;
       }
       if(isMatch(prev, ch)) {
-        cout << "MATCH!!!!! " << prev << ch << "<br/>";
+        //cout << "match! " << prev << ch << "<br/>";
         s.pop();
       }
       else {
-        cout << "ItSA ME MARIO,,, FUCKA YOU :( " << prev << ch << "<br/>";
+        cout << "Invalid expression.<br/>";
         break;
       }
     }
   }
   if(s.empty()) {
-    cout << "ItSA ME PEACH,,,, CAKE!<br/>";
+    cout << "The stack is now empty. The expression is valid.<br/>";
   }
   else {
-    cout << "CHECK YOUR WATCHES, BOWSER TIME!!!<br/>";
+    cout << "Invalid expression. The stack is not empty.<br/>";
   }
   return 0;
 }
