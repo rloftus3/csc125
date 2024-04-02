@@ -1,3 +1,6 @@
+#Custom
+*.csv
+
 # Prerequisites
 *.d
 

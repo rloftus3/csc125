@@ -1,36 +1,49 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
-
-#include <iostream>
+#ifndef _LINKEDLIST_H_
+#define _LINKEDLIST_H_
 #include <string>
-#include "node.h"
+#include <iostream>
 
 using namespace std;
 
 class LinkedList
 {
-    friend ostream& operator<<(ostream& o, LinkedList &ll);
-    public:
-        LinkedList();
-        ~LinkedList();
-        void insertAtFront(string s);
-        void insertAtBack(string s);
+  public:
+    friend ostream& operator<<(ostream& out, LinkedList &ll);
+    LinkedList() {_head=nullptr; _tail=nullptr; _size=0;}
+    LinkedList(const LinkedList& ll);   /// copy constructor
+    ~LinkedList(); // destructor
+    LinkedList operator=(const LinkedList& ll); //  logical copy
+    bool isEmpty() {return _size==0;}
+    void push_back(string item);
+    void push_front(string item);
+    string pop_front();
+    string front();
+    string back();
+    int size() {return _size;}
+    int len() {return _size;}
 
-        string removeFromFront();
+    int numberOfNodes();  
+    string leastNode();  
+    void mergeSort();
 
+  private:
+    class Node
+    {
+      public:
+        Node(string str, Node* ptr) {_data=str; _next=ptr;}
+        string _data;
+        Node* _next;
+    };
 
-        bool isEmpty() {return myHead == NULL;}
+    int numberOfNodesRecursive(Node *);
+    string leastNodeRecursive(Node *);
+    
+    void split(LinkedList& ll1,LinkedList& ll2);
+    void merge(LinkedList& ll1,LinkedList& ll2);
+    Node* _head;
+    Node* _tail;
+    int _size; 
 
-        void mergeSort();
-
-    protected:
-    private:
-        /// for use with mergeSort
-        void split(LinkedList &l1, LinkedList &l2);
-        void join(LinkedList &l1, LinkedList &l2);
-
-        Node *myHead;  // first element
-        Node *myTail;  // last element
 };
 
-#endif // LINKEDLIST_H
+#endif

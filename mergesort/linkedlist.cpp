@@ -1,135 +1,206 @@
 #include "linkedlist.h"
 
-LinkedList::LinkedList()
+LinkedList::LinkedList(const LinkedList& ll)
 {
-    //ctor
-    myHead = myTail = NULL;
+  _size=0;
+  Node *ptr = ll._head;
+  while (ptr != nullptr) /// not null
+  {
+      push_back(ptr->_data);
+      ptr=ptr->_next;
+  }
+
 }
 
-LinkedList::~LinkedList()
+LinkedList::~LinkedList() // destructor
 {
-    Node *ptr=myHead;
-    Node *temp;
-    while (ptr != NULL)
+  while (! isEmpty())
     {
-        temp = ptr->getNext();
-        delete ptr;
-        ptr = temp;
+      pop_front();
     }
 }
-
-ostream& operator<<(ostream& o, LinkedList &ll)
+LinkedList LinkedList::operator=(const LinkedList& ll) //  logical copy
 {
-    o << "The list:";
-    if ( ll.isEmpty() )
-    {
-        o << "[EMPTY]" << endl;
-    }
-    else
-    {
-        // not empty
-        Node *ptr=ll.myHead;
-        while (ptr != NULL)
-        {
-            cout << *ptr;
-            ptr = ptr->getNext();
-        }
-        cout << "Done" << endl;
-    }
-    return o;
+  _size=0;
+  Node *ptr = ll._head;
+  while (ptr != nullptr) /// not null
+  {
+      push_back(ptr->_data);
+      ptr=ptr->_next;
+  }
+  return ll;
 }
 
-void LinkedList::insertAtFront(string s)
+int LinkedList::numberOfNodes()
 {
-    if ( isEmpty() )
-    {
-        Node* temp = new Node(s, NULL);
-        myHead = myTail = temp;
-    }
-    else
-    {
-        Node *temp = new Node(s, myHead);
-        myHead = temp;
-    }
-}
-void LinkedList::insertAtBack(string s)
-{
-    if ( isEmpty() )
-    {
-        Node* temp = new Node(s, NULL);
-        myHead = myTail = temp;
-    }
-    else
-    {
-        Node *temp = new Node(s, NULL);
-        myTail->setNext(temp);
-        myTail = temp;
-    }
+  return numberOfNodesRecursive(_head);
 }
 
-string LinkedList::removeFromFront()
+
+int LinkedList::numberOfNodesRecursive(Node * ptr)
 {
-    Node *deleteMe = myHead;
-    string returnMe = myHead->getData();
-
-    myHead=myHead->getNext();
-    if (myHead == NULL)
-    {
-        myTail = NULL;
-    }
-
-    delete deleteMe;
-    return returnMe;
+  if (ptr == nullptr)
+  {
+    return 0;
+  }
+  return 1 + numberOfNodesRecursive(ptr->_next);
 }
+
+/*string LinkedList::leastNode()
+{
+   return leastNodeRecursive(_head); 
+}
+
+string LinkedList::leastNodeRecursive(Node * ptr)
+{
+    if (ptr == nullptr)
+    {
+      cerr << "No least element in an empty list" << endl;
+      exit(0);
+    }
+    if (ptr->_next == nullptr)
+    {
+      return ptr->_data;
+    }
+}*/
 
 void LinkedList::mergeSort()
 {
-/// if the list has one or zero elements, return
-    if (myHead == myTail) return;
-    LinkedList l1, l2;
-
-    // split the current list into two
-    split(l1, l2);
-
-    // mergesort each half
-    l1.mergeSort();
-    l2.mergeSort();
-
-    // merge the sorted halves back into the current list
-    join(l1, l2);
+  if (_size == 0) // no elements
+    return;
+  if (_size == 1) // one element
+    return;
+  LinkedList ll1;
+  LinkedList ll2;
+  split(ll1, ll2);
+  //cout << "List 1" << ll1 << endl;
+  //cout << "List 2" << ll2 << endl;
+  ll1.mergeSort();
+  ll2.mergeSort();
+  merge(ll1, ll2);
 }
 
-void LinkedList::split(LinkedList &l1, LinkedList &l2)
+void LinkedList::split(LinkedList& ll1,LinkedList& ll2)
 {
-    while (!isEmpty())
-    {
-        l1.insertAtBack(removeFromFront());
-        if (!isEmpty())
-        {
-            l2.insertAtBack(removeFromFront());
-        }
-    }
+  // split from evenly into ll1 and ll2
+  while (!isEmpty())
+  {
+    ll1.push_back(  pop_front()  );   
+    if (!isEmpty())
+      ll2.push_back(  pop_front()  );   
+  }  
 }
 
-void LinkedList::join(LinkedList &l1, LinkedList &l2)
+void LinkedList::merge(LinkedList& ll1,LinkedList& ll2)
 {
-    while (!l1.isEmpty() && !l2.isEmpty())
-    {
-        if (l1.myHead->getData() < l2.myHead->getData() )
-        {
-            insertAtBack(l1.removeFromFront());
-        }
+    while ( !ll1.isEmpty() && !ll2.isEmpty() )
+      {
+        if (ll1.front() < ll2.front())
+          push_back( ll1.pop_front() );
         else
-        {
-            insertAtBack(l2.removeFromFront());
-        }
-    }
-    while (!l1.isEmpty())
+          push_back( ll2.pop_front() );
+      }
+  // at this point one of ll1 and ll2 is empty
+  while ( !ll1.isEmpty() )
+    push_back( ll1.pop_front() );
+  while ( !ll2.isEmpty() )
+    push_back( ll2.pop_front() );
+}
+
+  
+void LinkedList::push_back(string item)
+{
+  Node* newNode = new Node(item, nullptr);
+  if ( isEmpty() )
+  {
+    _head = newNode;
+    _tail = newNode;
+  } 
+  else
+  {
+    _tail->_next = newNode; 
+    _tail = newNode;
+  }
+  _size++;
+ 
+}
+
+void LinkedList::push_front(string item)
+{
+  Node* newNode = new Node(item, nullptr);
+  if ( isEmpty() )
+  {
+    _head = _tail = newNode;
+  } 
+  else
+  {
+    newNode->_next = _head;
+    _head = newNode;
+  }
+  _size++;
+ 
+}
+
+string LinkedList::pop_front()
+{
+  if ( isEmpty() )
+  {
+    cerr << "Attempting to remove an item from an empty list" << endl;
+    exit(1);
+  }
+  // the list is non empty
+  _size--;
+  Node* deletedNode = _head;
+  string returnValue = _head->_data;
+  if ( isEmpty() )
+  {
+    _head = _tail = nullptr;
+  }
+  else
+  {
+     _head = _head->_next; 
+  }
+  delete deletedNode;   // return the memory to the free pool
+  return returnValue; 
+}
+
+string LinkedList::front()
+{
+  if ( isEmpty() )
+  {
+    cerr << "Attempting to view an item from an empty list" << endl;
+    exit(1);
+  }
+  return _head->_data;
+}
+
+string LinkedList::back()
+{
+  if ( isEmpty() )
+  {
+    cerr << "Attempting to view an item from an empty list" << endl;
+    exit(1);
+  }
+  return _tail->_data;
+}
+
+
+ostream& operator<<(ostream& out, LinkedList &ll)
+{
+  if (ll.isEmpty()) 
+  {
+    out << "This is an empty list";
+  }
+  else
+  {
+    LinkedList::Node* ptr = ll._head;
+    while (ptr != nullptr)
     {
-        insertAtBack(l1.removeFromFront());
+      out << ptr->_data << " | ";
+      ptr = ptr->_next;
     }
-    while (!l2.isEmpty())
-    {
-        insertAtBack(l2.removeFromFront());
-    }
+    
+  }
+  out << endl;
+  return out;
 }
