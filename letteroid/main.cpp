@@ -2,6 +2,7 @@
 #include "letteroid.h"
 #include "blinkingletteroid.h"
 #include "jumpingletteroid.h"
+#include "movingletteroid.h"
 #include "letteroidfield.h"
 #include <sys/time.h>
 #include <cstdlib>
@@ -13,7 +14,7 @@ int main()
 
   LetteroidField screen;
   screen.start();
-  screen.setTitle("Ken's example for the class. Press 'x' to quit");
+  screen.setTitle("Rachel's super awesome big huge gigantic successful great terrfic fantastic bombdiggity. Press 'x' to quit");
 
   
   BlinkingLetteroid one(true);
@@ -41,6 +42,10 @@ int main()
   JumpingLetteroid jumper(20,80);
   jumper.setLetter('J');
 
+  MovingLetteroid mover(20, 80, true);
+  mover.setLetter('M');
+  mover.setCoords(10, 1);
+
   while ( screen.waitForKeyPress() ) /// keep going until 'x' is pressed
     {
       /// individual blinking letteroids
@@ -54,7 +59,8 @@ int main()
 
       jumper.jump();
 
-	  
+      mover.move();
+
     }
 
 
