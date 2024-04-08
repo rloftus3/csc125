@@ -2,10 +2,13 @@
 #include "letteroid.h"
 #include "blinkingletteroid.h"
 #include "letteroidfield.h"
+#include <sys/time.h>
+#include <cstdlib>
 
 int main()
 {
 
+  srand(time(0));
 
   LetteroidField screen;
   screen.start();
