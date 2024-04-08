@@ -10,10 +10,10 @@ MovingLetteroid::MovingLetteroid(int rowMax, int colMax, bool movesHorizontal) {
 void MovingLetteroid::move() {
     erase();
     if(m_horizontal) {
-        myY = (((myY + 1) % m_rowMax) + 1);
+        myY = (((myY + 1) % m_colMax) + 1);
     }
     else {
-        myX = (((myX + 1) % m_colMax) + 1);
+        myX = (((myX + 1) % m_rowMax) + 1);
     }
     draw();
 }

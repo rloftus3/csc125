@@ -14,7 +14,7 @@ int main()
 
   LetteroidField screen;
   screen.start();
-  screen.setTitle("Rachel's super awesome big huge gigantic successful great terrfic fantastic bombdiggity. Press 'x' to quit");
+  screen.setTitle("Rachel's super awesome bombdiggity. Press 'x' to quit");
 
   
   BlinkingLetteroid one(true);
