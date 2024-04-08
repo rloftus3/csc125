@@ -8,7 +8,7 @@ JumpingLetteroid::JumpingLetteroid(int rowMax, int colMax) {
 
 void JumpingLetteroid::jump() {
     erase();
-    myX = rand() % rowMax;
-    myY = rand() % colMax;
+    myX = rand() % m_rowMax;
+    myY = rand() % m_colMax;
     draw();
 }
