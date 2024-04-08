@@ -34,6 +34,9 @@ int main()
   
   // declare and initialize your letteroids here
 
+  JumpingLetteroid jumper(20,80);
+  jumper.setLetter('J');
+
   while ( screen.waitForKeyPress() ) /// keep going until 'x' is pressed
     {
       /// individual blinking letteroids
@@ -42,9 +45,10 @@ int main()
 
       // the whole array of blinking letteroids
       for (int i=0;i<5;i++)
-	word[i].blink();
-
+	      word[i].blink();
       // add any other letteroids here
+
+      jumper.jump();
 
 	  
     }
