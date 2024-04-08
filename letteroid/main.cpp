@@ -1,6 +1,7 @@
 #include <ncurses.h>
 #include "letteroid.h"
 #include "blinkingletteroid.h"
+#include "jumpingletteroid.h"
 #include "letteroidfield.h"
 #include <sys/time.h>
 #include <cstdlib>
