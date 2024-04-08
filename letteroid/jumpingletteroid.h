@@ -1,16 +1,11 @@
 #ifndef _JUMPINGLETTEROID_H_
 #define _JUMPINGLETTEROID_H_
 
-#include <sys/time.h>
 #include "letteroid.h"
 
 class JumpingLetteroid :public Letteroid {
  public:
-    JumpingLetteroid(int rowMax, int colMax) {
-        m_rowMax = rowMax;
-        m_colMax = colMax;
-        srand(time(0)); 
-    }
+    JumpingLetteroid(int rowMax, int colMax);
     void jump();
   
  private:
