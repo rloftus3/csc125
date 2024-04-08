@@ -46,6 +46,10 @@ int main()
   mover.setLetter('M');
   mover.setCoords(10, 1);
 
+  MovingLetteroid shaker(20, 80, false);
+  shaker.setLetter('S');
+  shaker.setCoords(10, 1);
+
   while ( screen.waitForKeyPress() ) /// keep going until 'x' is pressed
     {
       /// individual blinking letteroids
@@ -60,6 +64,7 @@ int main()
       jumper.jump();
 
       mover.move();
+      shaker.move();
 
     }
 
