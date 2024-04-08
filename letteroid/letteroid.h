@@ -27,7 +27,7 @@ class Letteroid
   void erase();            // erase the letteroid from the screen
   void draw();             // draw the letteroid to the screen  
   
- private:
+ protected:
   // These should be better named (during break) as m_Row & m_Col - ken
   int myX;
   int myY;
