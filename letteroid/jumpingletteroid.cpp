@@ -1,5 +1,6 @@
 #include "jumpingletteroid.h"
 #include <sys/time.h>
+#include <cstdlib>
 
 JumpingLetteroid::JumpingLetteroid(int rowMax, int colMax) {
     m_rowMax = rowMax;
