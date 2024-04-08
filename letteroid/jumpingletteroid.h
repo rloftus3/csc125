@@ -1,6 +1,7 @@
 #ifndef _JUMPINGLETTEROID_H_
 #define _JUMPINGLETTEROID_H_
 
+#include <sys/time.h>
 #include "letteroid.h"
 
 class JumpingLetteroid :public Letteroid {

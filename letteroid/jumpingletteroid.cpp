@@ -1,4 +1,5 @@
 #include "jumpingletteroid.h"
+#include <sys/time.h>
 
 void JumpingLetteroid::jump() {
     erase();
