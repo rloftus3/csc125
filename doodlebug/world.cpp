@@ -24,10 +24,10 @@ World::World(int maxRows, int maxCols)
   fillBorder();   /// init the world with a border and empty cells
   setNeighbors(); /// link up all the cells with their neighbors;
 
-  /// add a pond here
+  makePond();/// add a pond here
   fillAnt();      /// add ants to random empty cells
   fillDoodleBug();/// add doodlebugs to random empty cells
-  /// add frog here
+  makeFrog();/// add frog here
 
   setCells(); /// linkup all the organisms with their cells
 }

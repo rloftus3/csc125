@@ -1,4 +1,5 @@
-SUBDIRS = madlib SVGrectangle stack mergesort letteroid doodlebug
+#SUBDIRS = madlib SVGrectangle stack mergesort letteroid doodlebug
+SUBDIRS = doodlebug
 
 all: $(SUBDIRS)
 

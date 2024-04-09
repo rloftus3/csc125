@@ -14,6 +14,7 @@ publish:
 	if test -d ~/public_html; then \
 	  mkdir -p ~/public_html/doodlebug; \
 		cp -f --remove-destination *.cgi ~/public_html/doodlebug; \
+		cp -f --remove-destination *.jpg ~/public_html/doodlebug; \
 	fi
 
 clean:
