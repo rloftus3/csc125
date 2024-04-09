@@ -11,7 +11,7 @@ class Pond :public Organism
 {
  public:
   string toString() {return "Pond";}
-  string getImageName() {return "water.jpg"};
+  string getImageName() {return "water.jpg";}
   bool isEmpty() {return false;} 
   void move() {}; //do nothing
  private:

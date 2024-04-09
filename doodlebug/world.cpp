@@ -1,4 +1,6 @@
 #include "world.h"
+#include "pond.h"
+#include "frog.h"
 #include <iostream>
 
 using namespace std;
