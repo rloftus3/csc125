@@ -109,6 +109,11 @@ void World::fillBorder()
     }
 }
 
+void World::makePond() {
+
+
+}
+
 void World::fillAnt()
 {
   int row, col;
@@ -126,8 +131,7 @@ void World::fillAnt()
     }
 }
 
-void World::fillDoodleBug()
-{
+void World::fillDoodleBug() {
   int row, col;
   
   for (row=0;row<m_MaxRows+2;row++) 
@@ -138,6 +142,22 @@ void World::fillDoodleBug()
                && rand()%40==0 ) // empty & 2.5%  
 	    { 
 	      m_Grid[row][col]->resetOrganism( new DoodleBug() ) ;
+	    }
+	}
+    }
+}
+
+void World::makeFrog() {
+  int row, col;
+  
+  for (row=0;row<m_MaxRows+2;row++) 
+    {
+      for (col=0;col<m_MaxCols+2;col++)
+	{
+	  if ( m_Grid[row][col]->getOrganism()->isEmpty() 
+               && rand()%100==0 ) // empty & 1%  
+	    { 
+	      m_Grid[row][col]->resetOrganism( new Frog() ) ;
 	    }
 	}
     }

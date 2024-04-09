@@ -20,8 +20,10 @@ class World
  private:
   void fill();
   void fillBorder();
+  void makePond();
   void fillAnt();
   void fillDoodleBug();
+  void makeFrog();
   void setNeighbors();
   void setCells();
 
