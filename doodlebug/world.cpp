@@ -2,6 +2,7 @@
 #include "pond.h"
 #include "frog.h"
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -112,8 +113,22 @@ void World::fillBorder()
 }
 
 void World::makePond() {
+  int center_x = rand() % m_MaxRows;
+  int center_y = rand() % m_MaxCols;
+  int x_diff;
+  int y_diff;
+  int radius = (rand() % 20) + 5;
 
+  for (int row=0;row<m_MaxRows+2;row++) {
+    for (int col=0;col<m_MaxCols+2;col++) {
+      x_diff = abs(center_x - row);
+      y_diff = abs(center_y - col);
 
+      if ((x_diff + y_diff) < radius) {
+        m_Grid[row][col]->resetOrganism( new Pond() ) ;
+      }
+	  }
+  }
 }
 
 void World::fillAnt()
