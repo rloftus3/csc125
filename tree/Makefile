@@ -15,6 +15,7 @@ publish:
 	if test -d ~/public_html; then \
 	  mkdir -p ~/public_html/tree; \
 		cp -f --remove-destination *.cgi ~/public_html/tree; \
+		cp -f --remove-destination *.html ~/public_html/tree; \
 	fi
 
 clean:
