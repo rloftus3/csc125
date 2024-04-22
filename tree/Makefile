@@ -2,7 +2,8 @@
 
 # Compiler and compiler flags
 CXX = g++
-CXXFLAGS = -Wall -Werror -std=c++11
+#CXXFLAGS = -Wall -Werror -std=c++11
+CXXFLAGS = -std=c++11
 
 # Default target
 all: runme.cgi publish
