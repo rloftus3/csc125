@@ -81,8 +81,9 @@ void parseProgram(string program)
   string loc;
   string cmd;
   int locint;
+  Tree tree;
 
-  cout << "<table>";
+  //cout << "<table>";
 
   while ( string::npos != (pos = program.find("\n") ) )
     {
@@ -96,8 +97,8 @@ void parseProgram(string program)
       sep = line.find(" ");
       cmd = line.substr(0, sep);
 
-      cout << "<tr>";
-      cout << "<td>" << cmd << "</td>";
+      //cout << "<tr>";
+      //cout << "<td>" << cmd << "</td>";
 
       if(cmd == "INSERT") {
         line = line.substr(sep+1);
@@ -105,16 +106,27 @@ void parseProgram(string program)
         loc = line.substr(0, sep);
         locint = stoi(loc);
         token = line.substr(sep+1);
-        cout << "<td>" << locint << "</td>";
-        cout << "<td>" << token << "</td>";
+        //cout << "<td>" << locint << "</td>";
+        //cout << "<td>" << token << "</td>";
+        tree.insert(locint, token);
       }
-      cout << "</tr>";
+      else if(cmd == "PREORDER") {
+        tree.preorder();
+      }
+      else if(cmd == "POSTORDER") {
+        tree.postorder();
+      }
+      else if(cmd == "INORDER") {
+        tree.inorder();
+      }
+      //cout << "</tr>";
+      
       
       
       /// this routine just prints it.
       //cout << ++count << ": [" << line << "] len=" << line.size() 
            //<< "<br />" << endl;
     }
-     cout << "</table>";
+     //cout << "</table>";
 
 }
