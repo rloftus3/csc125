@@ -7,6 +7,7 @@
 #include <iostream>
 #include "htmlform.h"
 #include "tree.h"
+#include "node.h"
 
 void printProgram(string);   /// print the program in HTML
 
