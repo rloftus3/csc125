@@ -1,0 +1,7 @@
+You have to compile with
+
+g++ -std=c++11
+
+Something like
+
+g++ *o *cpp -std=c++11 -o runme.cgi
