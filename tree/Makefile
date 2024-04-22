@@ -7,8 +7,8 @@ CXXFLAGS = -Wall -Werror -std=c++11
 # Default target
 all: runme.cgi publish
 
-runme.cgi: main.cpp
-	$(CXX) *.cpp -o $@
+runme.cgi: main.cpp node.h
+	$(CXX) $(CXXFLAGS) *.cpp -o $@
 
 publish:
 	if test -d ~/public_html; then \
