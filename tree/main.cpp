@@ -6,6 +6,7 @@
 */
 #include <iostream>
 #include "htmlform.h"
+#include "tree.h"
 
 void printProgram(string);   /// print the program in HTML
 
@@ -21,7 +22,7 @@ int main()
   steps.getPostData();
 
   /// Show the debugging
-  cout << "Queue Parser Lab startup" << endl;
+  cout << "Tree Lab" << endl;
   steps.debug();
 
   
