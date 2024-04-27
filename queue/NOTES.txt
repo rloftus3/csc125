@@ -1,7 +1,7 @@
-You have to compile with
-
-g++ -std=c++11
-
-Something like
+You have to compile with '-std=c++11' so use something like:
 
 g++ *o *cpp -std=c++11 -o runme.cgi
+
+To copy, use:
+
+cp ~kurban/public_html/permanent/csc125Labs/priorityQueueParser/* .
