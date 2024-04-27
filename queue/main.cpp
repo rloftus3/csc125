@@ -101,15 +101,15 @@ void parseProgram(string program) {
       }
       else if(cmd == "TOP") {
         prio = pq.top();
-        cout << prio << ", " << token << endl;
+        cout << prio << ", " << token << "<br />" << endl;
         itr = m.find(prio);
         if (itr == m.end()) {
           //handle the error
-          cout << "ERROR: element " << prio << "not found" << endl;
+          cout << "ERROR: element " << prio << "not found" << "<br />" << endl;
         } 
         else {
             token = itr->second;
-            cout << prio << ", " << token << endl;
+            cout << prio << ", " << token << "<br />" << endl;
         }
       }
       else if(cmd == "DUMP") {
@@ -119,11 +119,11 @@ void parseProgram(string program) {
             itr = m.find(prio);
             if (itr == m.end()) {
               //handle the error
-              cout << "ERROR: element " << prio << "not found" << endl;
+              cout << "ERROR: element " << prio << "not found" << "<br />" << endl;
             } 
             else {
               token = itr->second;
-              cout << prio << ", " << token << endl;
+              cout << prio << ", " << token << "<br />" << endl;
             }
             pq.pop();
           }
@@ -133,7 +133,7 @@ void parseProgram(string program) {
         }
       }
       else if(cmd == "NAME") {
-        cout << "Rachel Loftus" << endl;
+        cout << "Rachel Loftus" << "<br />" << endl;
       }
 }
 }
