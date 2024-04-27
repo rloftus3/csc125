@@ -79,6 +79,8 @@ void parseProgram(string program) {
   map<int, string> m;
   map<int, string>::iterator itr;
 
+  cout << "<hr>";
+
   while ( string::npos != (pos = program.find("\n") ) )
     {
       line = program.substr(0, pos);    /// before the newline
@@ -129,7 +131,7 @@ void parseProgram(string program) {
           }
         }
         else {
-          cout << "EMPTY";
+          cout << "EMPTY" << "<br />" << endl;
         }
       }
       else if(cmd == "NAME") {
