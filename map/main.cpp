@@ -72,7 +72,7 @@ int main() {
 
 
     //print pq
-    cout << "<table>" << endl;
+    cout << "<table bgcolor='antiquewhite' border='2'>" << endl;
     while (!pq.empty()) {
         if(counter > 20) {
             break;
@@ -89,7 +89,7 @@ int main() {
                     break;
                 }
                 //cout << freq << " " << word << "<br />";
-                cout << "<tr><td>" << freq << "</td><td>" << word << "</td></tr>" << endl;
+                cout << "<tr><td align='center'>" << freq << "</td><td>" << word << "</td></tr>" << endl;
             }
         }
         pq.pop();
