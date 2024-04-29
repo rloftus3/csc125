@@ -41,10 +41,10 @@ int main() {
     }
 
     //TEST CODE 4 map1
-    for(const auto& elem : map1) {
+   /* for(const auto& elem : map1) {
         cout << elem.first << " " << elem.second << "<br />" << endl;
     }
-    cout << "<hr/>";
+    cout << "<hr/>";*/
 
     //populate pq
     for(const auto& elem : map1) {
@@ -62,13 +62,13 @@ int main() {
     }
     
     //test map2
-    for(const auto& elem : map2) {
+    /*for(const auto& elem : map2) {
         cout << elem.first << " "; 
         for (string i: elem.second) {
             cout << i << ", ";
         }
         cout << "<br /> <hr />" << endl;
-    }
+    }*/
 
 
     //print pq
@@ -78,7 +78,7 @@ int main() {
         }
         freq = pq.top();
         cout << freq << "<br />";
-        /*if(map2.find(freq) == map2.end()) {
+        if(map2.find(freq) == map2.end()) {
             //item doesn't exist
             cout << "ERROR: element " << freq << "not found" << "<br />" << endl;
         }
@@ -90,7 +90,7 @@ int main() {
                 }
                 cout << freq << " " << i << "<br />";
             }
-        }*/
+        }
         pq.pop();
     }
 
