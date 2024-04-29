@@ -45,7 +45,7 @@ int main() {
         cout << elem.first << " " << elem.second << "<br />" << endl;
     }*/
 
-    //use pq to get top 20
+    //populate pq
     for(const auto& elem : map1) {
         //add freq to pq
         token = elem.first;
@@ -60,50 +60,36 @@ int main() {
         map2[freq].push_back(token);
     }
     
+    /*test map2
     for(const auto& elem : map2) {
         cout << elem.first << " "; 
         for (string i: elem.second) {
             cout << i << ", ";
         }
         cout << "<br />" << endl;
-    }
+    }*/
 
 
     //print pq
-    /*while (!pq.empty()) {
-        prio = pq.top();
-        int itr = m.find(prio);
-        if (itr == m.end()) {
-            //handle the error
-            cout << "ERROR: element " << prio << "not found" << "<br />" << endl;
-        } 
-        else {
-            token = itr->second;
-            cout << prio << ", " << token << "<br />" << endl;
-        }
-        pq.pop();
-    }
-*/
-    //loop through all items in map and add frequencies to pq
-        //create new map (frequencies to tokens)
-
-   /* if(map2.find(freq) == map2.end()) {
-        vector<string> v;
-        map2[freq] = v;
-    }
-    map2[freq].push_back(token);
-
-
-
-    while(!pq.empty()) {
+    while (!pq.empty()) {
         counter++;
         if(counter > 20) {
             break;
         }
-    }*/
-
-    
-
+        freq = pq.top();
+        cout << freq << " ";
+        if(map2.find(freq) == map2.end()) {
+            //item doesn't exist
+            cout << "ERROR: element " << freq << "not found" << "<br />" << endl;
+        } 
+        else {
+            for (string i: map2[freq]) {
+                cout << i << ", ";
+            }
+            cout << "<br />" << endl;
+        }
+        pq.pop();
+    }
 
     return 0;
 }
