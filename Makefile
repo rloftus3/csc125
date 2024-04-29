@@ -1,5 +1,5 @@
-#SUBDIRS = madlib SVGrectangle stack mergesort letteroid doodlebug tree queue
-SUBDIRS = queue
+#SUBDIRS = madlib SVGrectangle stack mergesort letteroid doodlebug tree queue map
+SUBDIRS = map
 
 all: $(SUBDIRS)
 
