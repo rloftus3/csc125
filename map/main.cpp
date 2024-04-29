@@ -60,14 +60,14 @@ int main() {
         map2[freq].push_back(token);
     }
     
-    /*test map2
+    //test map2
     for(const auto& elem : map2) {
         cout << elem.first << " "; 
         for (string i: elem.second) {
             cout << i << ", ";
         }
-        cout << "<br />" << endl;
-    }*/
+        cout << "<br /> <hr />" << endl;
+    }
 
 
     //print pq
