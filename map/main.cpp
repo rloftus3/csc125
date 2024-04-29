@@ -76,7 +76,8 @@ int main() {
             break;
         }
         freq = pq.top();
-        if(map2.find(freq) == map2.end()) {
+        cout << freq << "<br />";
+        /*if(map2.find(freq) == map2.end()) {
             //item doesn't exist
             cout << "ERROR: element " << freq << "not found" << "<br />" << endl;
         }
@@ -88,7 +89,7 @@ int main() {
                 }
                 cout << freq << " " << i << "<br />";
             }
-        }
+        }*/
         pq.pop();
     }
 
