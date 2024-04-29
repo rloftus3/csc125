@@ -23,6 +23,8 @@ int main() {
     steps.getPostData();
     string program = steps.getField("program");
 
+    //TODO: strip nonletters, convert to lower
+
     //process input
     while(string::npos != (pos = program.find_first_of("\n "))) {
         //split into words
@@ -38,10 +40,37 @@ int main() {
         }
     }
 
-    for(const auto& elem : map1) {
+    //TEST CODE 4 map1
+    /*for(const auto& elem : map1) {
         cout << elem.first << " " << elem.second << "<br />" << endl;
     }
-    cout << "Hello from Poop Store" << endl;
+    //cout << "Hello from Poop Store" << endl;*/
+
+    //use pq to get top 20
+    for(const auto& elem : map1) {
+        //add freq to pq
+        token = elem.first;
+        freq = elem.second;
+        pq.push(freq);
+
+        //map freq to words
+        if(map2.find(freq) == map2.end()) {
+            //freq not yet in map
+            map2[freq] = vector<string>();
+        }
+        map2[freq].push_back(token);
+    }
+
+    for(const auto& elem : map2) {
+        cout << elem.first << " "; 
+        for (string i: elem.second) {
+            cout << i << ", ";
+        }
+        cout << "<br />" << endl;
+    }
+
+
+    //print pq
     /*while (!pq.empty()) {
         prio = pq.top();
         int itr = m.find(prio);
@@ -54,8 +83,8 @@ int main() {
             cout << prio << ", " << token << "<br />" << endl;
         }
         pq.pop();
-    }*/
-
+    }
+*/
     //loop through all items in map and add frequencies to pq
         //create new map (frequencies to tokens)
 
