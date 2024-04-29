@@ -72,21 +72,22 @@ int main() {
 
     //print pq
     while (!pq.empty()) {
-        counter++;
         if(counter > 20) {
             break;
         }
         freq = pq.top();
-        cout << freq << " ";
         if(map2.find(freq) == map2.end()) {
             //item doesn't exist
             cout << "ERROR: element " << freq << "not found" << "<br />" << endl;
-        } 
+        }
         else {
             for (string i: map2[freq]) {
-                cout << i << ", ";
+                counter++;
+                if(counter > 20) {
+                    break;
+                }
+                cout << freq << " " << i << "<br />";
             }
-            cout << "<br />" << endl;
         }
         pq.pop();
     }
