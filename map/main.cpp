@@ -51,12 +51,12 @@ int main() {
         //add freq to pq
         token = elem.first;
         freq = elem.second;
-        pq.push(freq);
 
         //map freq to words
         if(map2.find(freq) == map2.end()) {
             //freq not yet in map
             map2[freq] = vector<string>();
+            pq.push(freq);
         }
         map2[freq].push_back(token);
     }
