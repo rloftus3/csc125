@@ -43,8 +43,7 @@ int main() {
     //TEST CODE 4 map1
     /*for(const auto& elem : map1) {
         cout << elem.first << " " << elem.second << "<br />" << endl;
-    }
-    //cout << "Hello from Poop Store" << endl;*/
+    }*/
 
     //use pq to get top 20
     for(const auto& elem : map1) {
@@ -60,7 +59,7 @@ int main() {
         }
         map2[freq].push_back(token);
     }
-
+    
     for(const auto& elem : map2) {
         cout << elem.first << " "; 
         for (string i: elem.second) {
