@@ -72,27 +72,29 @@ int main() {
 
 
     //print pq
+    cout << "<table>" << endl;
     while (!pq.empty()) {
         if(counter > 20) {
             break;
         }
         freq = pq.top();
-        cout << freq << "<br />";
         if(map2.find(freq) == map2.end()) {
             //item doesn't exist
             cout << "ERROR: element " << freq << "not found" << "<br />" << endl;
         }
         else {
-            for (string i: map2[freq]) {
+            for (string word: map2[freq]) {
                 counter++;
                 if(counter > 20) {
                     break;
                 }
-                cout << freq << " " << i << "<br />";
+                //cout << freq << " " << word << "<br />";
+                cout << "<tr><td>" << freq << "</td><td>" << word << "</td></tr>" << endl;
             }
         }
         pq.pop();
     }
+    cout << "</table>" << endl;
 
     return 0;
 }
