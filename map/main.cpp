@@ -17,10 +17,10 @@ int main() {
     priority_queue<int> pq;
 
     cout << "Content-type: text/html\n\n";
-    cout << "Hello from Poop Store" << endl;
+    
 
     //read all code into string
-    /*steps.getPostData();
+    steps.getPostData();
     string program = steps.getField("program");
 
     //process input
@@ -40,7 +40,8 @@ int main() {
 
     for(const auto& elem : map1) {
         cout << elem.first << " " << elem.second << "<br />" << endl;
-    }  */ 
+    }
+    cout << "Hello from Poop Store" << endl;
     /*while (!pq.empty()) {
         prio = pq.top();
         int itr = m.find(prio);
