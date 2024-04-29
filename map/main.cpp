@@ -41,9 +41,10 @@ int main() {
     }
 
     //TEST CODE 4 map1
-    /*for(const auto& elem : map1) {
+    for(const auto& elem : map1) {
         cout << elem.first << " " << elem.second << "<br />" << endl;
-    }*/
+    }
+    cout << "<hr/>";
 
     //populate pq
     for(const auto& elem : map1) {
